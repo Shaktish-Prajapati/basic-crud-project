@@ -5,7 +5,8 @@ $title='Contents';
 $content='';
 
 
-include('master.php')
+include('master.php');
+
 
 ?>
 <!-- Page breadcrumb -->
@@ -47,13 +48,10 @@ include('master.php')
                      <label for="author">Name <span class="required">*</span></label>
                      <input type="text" required="required" size="30" placeholder="Author name" value="" name="author">
                    </p>
-                   <!-- <p class="comment-form-email">
-                     <label for="email">Email <span class="required">*</span></label>
-                     <input type="email" required="required" aria-required="true" value="" name="email">
-                   </p> -->
+
                    <p class="comment-form-url">
-                     <label for="title">Topic Name<span class="required">*</span></label>
-                     <input type="text" required="required" aria-required="true" name="title">  
+                     <label for="topic">Topic Name<span class="required">*</span></label>
+                     <input type="text" required="required" aria-required="true" name="topic">  
                    </p>
                    <p class="comment-form-url">
                      <label for="description">Description of Topic<span class="required">*</span></label>
@@ -64,11 +62,11 @@ include('master.php')
                      <textarea required="required" aria-required="true" rows="8" cols="45" name="message"></textarea>
                    </p> 
                    <p class="form-submit">
-                     <label for="comment">Photo for Content</label>
-                     <input type="file" name="fileToUpload" id="fileToUpload">
+                     <label for="image">Photo for Content</label>
+                     <input type="file" name="image" id="imageToUpload">
                    </p>                  
                    <p class="form-submit">
-                     <input type="submit" value="Upload data" class="mu-post-btn" name="submit">
+                     <input type="upload" value="Upload data" class="mu-post-btn" name="submit">
                    </p>        
                </div>
              </div>
