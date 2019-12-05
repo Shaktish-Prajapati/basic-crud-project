@@ -23,8 +23,7 @@ if(isset($_POST['submit']))
    }
    else{
     echo"<script>alert('check your credentials') </script>";
-    //    header('Location:login.php');
-    // echo"<script>alert('check your credentials') </script>";
+  
        
    }
     

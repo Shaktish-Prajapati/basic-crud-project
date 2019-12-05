@@ -105,8 +105,6 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
             <li><a href="index.php">Home</a></li>            
-                     
-            
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -115,7 +113,7 @@
               </ul>
             </li> 
 
-            <li class="active"><a href="contact.php">Contact</a></li>
+            <li class=""><a href="contact.php">Contact</a></li>
              <li class=""><a href="register.php">Register</a></li>
              <li class=""><a href="login.php">Login</a></li>
             <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
