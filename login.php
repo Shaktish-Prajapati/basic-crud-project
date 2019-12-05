@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if(isset($_SESSION['email']))
+{
+    header('Location:index.php');
+}
 
 if(isset($_POST['submit']))
 {
@@ -13,12 +17,15 @@ if(isset($_POST['submit']))
     $count = mysqli_num_rows($run_query);
   //  echo $count;
     if($count == 1) {
-        //  session_register("email");
+
      $_SESSION['email'] = $email;
        header("location: index.php");
    }
    else{
-       echo'Check your provided data';
+    echo"<script>alert('check your credentials') </script>";
+    //    header('Location:login.php');
+    // echo"<script>alert('check your credentials') </script>";
+       
    }
     
 }
@@ -30,7 +37,7 @@ $content='<!-- Page breadcrumb -->
     <div class="row">
       <div class="col-md-12">
         <div class="mu-page-breadcrumb-area">
-          <h2>Registration</h2>
+          <h2 >Login</h2>
           
         </div>
       </div>
@@ -57,12 +64,12 @@ $content='<!-- Page breadcrumb -->
                    
                    <p class="comment-form-email">
                      <label for="email">Email <span class="required">*</span></label>
-                     <input type="email" required="required" aria-required="true"  value="" name="email">
+                     <input type="email" required="required" aria-required="true" placeholder="yourname@example.com"  value="" name="email">
                    </p>
                                       
                    <p class="comment-form-email">
                      <label for="password">Password <span class="required">*</span></label>
-                     <input type="password" required="required" aria-required="true" maxlength="15" value="" name="password">
+                     <input type="password" required="required" aria-required="true" placeholder="Max-Length 15" maxlength="15" value="" name="password">
                    </p>    
                               
                    <p class="form-submit">

@@ -1,26 +1,34 @@
 <?php 
+session_start();
+if(isset($_SESSION['email']))
+{
+  header('Location:index.php');
+}
 
 if(isset($_POST['submit']))
 {
+ 
     $name=$_POST['name'];
     $email=$_POST['email'];
     $mobile=$_POST['mobile'];
     $password=$_POST['password'];
     $cnfpassword=$_POST['cnfpassword'];
-    if($password==$cnfpassword)
+    echo $cnfpassword;
+    if($password == $cnfpassword)
     {
-        require('db-conn.php');
+      require('db-conn.php');
         $query="INSERT INTO `users`( `email`, `mobile`, `name`, `password`) values('$email', $mobile, '$name', '$password')";
+        echo $password;
         $run=mysqli_query($conn,$query);
         if(!$run)
         {
             echo mysqli_error($conn);
         }
         mysqli_close($conn);
-        echo 'error ';
+        header('Location:index.php');
     }
     else{
-        echo 'error in confirmation';
+      header('Location:index.php');
     }
     
 }

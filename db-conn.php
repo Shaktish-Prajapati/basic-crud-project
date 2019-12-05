@@ -2,13 +2,11 @@
 
 $localhost='localhost';
 $username='root';
-$password='';
+$pwd='';
 $db_name='varsity';
-$conn=mysqli_connect($localhost,$username,$password,$db_name);
-if(isset($conn))
+$conn=mysqli_connect($localhost,$username,$pwd,$db_name);
+if(!$conn)
 {
-    echo'done connection';
-} 
-//hifohdfio
-
+    echo mysqli_error($conn);
+}
 ?>

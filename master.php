@@ -56,7 +56,7 @@
                 <div class="mu-header-top-left">
                   <div class="mu-top-email">
                     <i class="fa fa-envelope"></i>
-                    <span>info@markups.io</span>
+                    <span>info@techostrix.com</span>
                   </div>
                   <div class="mu-top-phone">
                     <i class="fa fa-phone"></i>
@@ -113,9 +113,11 @@
                 <li><a href="blog-archive.php">Blog Archive</a></li>                
                 <li><a href="blog-single.php">Blog Single</a></li>                
               </ul>
-            </li>            
+            </li> 
+
             <li class="active"><a href="contact.php">Contact</a></li>
-                          
+             <li class=""><a href="register.php">Register</a></li>
+             <li class=""><a href="login.php">Login</a></li>
             <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
           </ul>                   
         </div><!--/.nav-collapse -->        
