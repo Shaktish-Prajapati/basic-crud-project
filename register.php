@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
     {
       require('db-conn.php');
         $query="INSERT INTO `users`( `email`, `mobile`, `name`, `password`) values('$email', $mobile, '$name', '$password')";
-        echo $password;
+        
         $run=mysqli_query($conn,$query);
         if(!$run)
         {

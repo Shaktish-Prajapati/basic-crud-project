@@ -58,15 +58,15 @@ include('master.php');
                      <input type="text" required="required" aria-required="true" placeholder="Max-length is 100 characters" name="description" maxlength='100'>  
                    </p>
                    <p class="comment-form-comment">
-                     <label for="message">Message</label>
-                     <textarea required="required" aria-required="true" rows="8" cols="45" name="message"></textarea>
+                     <label for="content">Content</label>
+                     <textarea required="required" aria-required="true" rows="8" cols="45" name="content"></textarea>
                    </p> 
                    <p class="form-submit">
                      <label for="image">Photo for Content</label>
                      <input type="file" name="image" id="imageToUpload">
                    </p>                  
                    <p class="form-submit">
-                     <input type="upload" value="Upload data" class="mu-post-btn" name="submit">
+                     <input type="submit" value="Upload data" class="mu-post-btn" name="submit">
                    </p>        
                </div>
              </div>
