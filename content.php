@@ -2,14 +2,7 @@
 
 $title='Contents';
 
-$content='';
-
-
-include('master.php');
-
-
-?>
-<!-- Page breadcrumb -->
+$content='<!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb">
   <div class="container">
     <div class="row">
@@ -55,7 +48,7 @@ include('master.php');
                    </p>
                    <p class="comment-form-url">
                      <label for="description">Description of Topic<span class="required">*</span></label>
-                     <input type="text" required="required" aria-required="true" placeholder="Max-length is 100 characters" name="description" maxlength='100'>  
+                     <input type="text" required="required" aria-required="true" placeholder="Max-length is 100 characters" name="description" maxlength="100">  
                    </p>
                    <p class="comment-form-comment">
                      <label for="content">Content</label>
@@ -79,4 +72,10 @@ include('master.php');
     </div>
   </div>
 </section>
-<!-- End contact  -->
+<!-- End contact  -->';
+
+
+include('master.php');
+
+
+?>

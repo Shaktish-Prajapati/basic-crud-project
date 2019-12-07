@@ -1,58 +1,4 @@
-<?php
-
-require('db-conn.php');
-
-$query = "SELECT * FROM posts ";
-
-if ($run_query = mysqli_query($conn, $query)) {
-  // Fetch one and one row
-  $num_rows=mysqli_num_rows($run_query);
-  echo$num_rows;
-  $t='';
-  while ($row = mysqli_fetch_array($run_query)) {
-     $id=         $row['id']; 
-     $user_post=  $row['user_post'];
-     $author=     $row['author'];
-     $topic_name= $row['topic_name'];
-     $description=$row['description'];
-     $content=    $row['content'];
-     $date_time=  $row['date_time'];
-     $image_src=  $row['image_src'];
-    //  $num_rows=$num_rows-1;
-     $t.='<!-- Artical start  -->
-     <div class="col-md-6 col-sm-6">
-       <article class="mu-blog-single-item">
-         <figure class="mu-blog-single-img">
-           <a href="#"><img src="'.$image_src.'" alt="img" style="width:350.px;height:200px;></a>
-           <figcaption class="mu-blog-caption">
-             <h3><a href="#">'.$topic_name.'</a></h3>
-           </figcaption>                      
-         </figure>
-         <div class="mu-blog-meta">
-           <a href="#">BY: '.$author.'</a>
-           <a href="#"> Posted on: '.$date_time.'</a>
-           <span><i class="fa fa-comments-o"></i>87</span>
-         </div>
-         <div class="mu-blog-description">
-           <p>'.$description.'</p>
-           <a class="mu-read-more-btn" href="#">Read More</a>
-         </div>
-       </article> 
-     </div> ';
-     
-  }
-  // mysqli_free_result($run_query);
-}
-else{
-  echo"<script>alert('Sql execution failed due to some technical fault...') </script>";
-  mysqli_close($conn);
-  echo "<script>window.location = 'index.php'</script>";
-
-}
-
-
-$title='blog-archive|collection of Blogs';
-$content=$content=' <!-- Page breadcrumb -->
+$content=' <!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb">
   <div class="container">
     <div class="row">
@@ -77,8 +23,33 @@ $content=$content=' <!-- Page breadcrumb -->
              <div class="col-md-9">
                <!-- start course content container -->
                <div class="mu-course-container mu-blog-archive">
-                 <div class="row">'.$t.
-                 '<!-- Artical ends -->
+                 <div class="row">'
+                 '<!-- Artical start  -->
+                   <div class="col-md-6 col-sm-6">
+                     <article class="mu-blog-single-item">
+                       <figure class="mu-blog-single-img">
+                         <a href="#"><img src="'.$image_src.'" alt="img"></a>
+                         <figcaption class="mu-blog-caption">
+                           <h3><a href="#">'.$topic_name.'</a></h3>
+                         </figcaption>                      
+                       </figure>
+                       <div class="mu-blog-meta">
+                         <a href="#">"BY: "'.$author.'</a>
+                         <a href="#">'.$date_time.'</a>
+                         <span><i class="fa fa-comments-o"></i>87</span>
+                       </div>
+                       <div class="mu-blog-description">
+                         <p>'.$description.'</p>
+                         <a class="mu-read-more-btn" href="#">Read More</a>
+                       </div>
+                     </article> 
+                   </div> '.
+                   $num_rows=$num_rows-1;
+                 }..while($num_rows!=0){
+                     
+                     .
+                   
+                   '<!-- Artical ends -->
 
                  </div>
                </div>
@@ -147,10 +118,10 @@ $content=$content=' <!-- Page breadcrumb -->
       </div>
     </div>
   </div>
-</section> ';;
+</section> ';
 
 
 
-include('master.php');
-?>
 
+
+style="width:750px;height:500px;
