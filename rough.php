@@ -125,3 +125,4 @@ $content=' <!-- Page breadcrumb -->
 
 
 style="width:750px;height:500px;
+<!-- bootstrap include code -->

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title><?php echo $title; ?></title>
+    
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
@@ -21,7 +23,8 @@
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">    
 
     <!-- Main style sheet -->
-    <link href="assets/css/style.css" rel="stylesheet">    
+    <link href="assets/css/style.css" rel="stylesheet">  
+      
 
    
     <!-- Google Fonts -->
@@ -98,7 +101,7 @@
           </button>
           <!-- LOGO -->              
           <!-- TEXT BASED LOGO -->
-          <a class="navbar-brand" href="index.html"><i class="fa fa-university"></i><span>Varsity</span></a>
+          <a class="navbar-brand" href="index.php"><i class="fa fa-university"></i><span>GSTcampus</span></a>
           <!-- IMG BASED LOGO  -->
           <!-- <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a> -->
         </div>
@@ -106,16 +109,42 @@
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
             <li><a href="index.php">Home</a></li>            
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="fa fa-angle-down"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog<span class="fa fa-angle-down"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="blog-archive.php">Blog Archive</a></li>                
                 <li><a href="blog-single.php">Blog Single</a></li>                
               </ul>
-            </li> 
+            </li>
+            
+             
 
             <li class=""><a href="contact.php">Contact</a></li>
-             <li class=""><a href="register.php">Register</a></li>
-             <li class=""><a href="login.php">Login</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php if(isset($_SESSION['name']))
+              {
+                echo $_SESSION['name'];
+              }
+            else{
+              echo 'User';
+            }?>
+            <span class="fa fa-angle-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+              <?php if(isset($_SESSION['email']))
+              {
+                echo '<li class=""><a href="logout.php">Logout</a></li> ';
+              }
+              else{
+                echo '<li class=""><a href="register.php">Register</a></li>             
+                <li class=""><a href="login.php">Login</a></li>';
+              }
+
+              ?>
+              
+                          
+              </ul>
+            </li>
+             <!-- <li class=""><a href="register.php">Register</a></li>
+             <li class=""><a href="login.php">Login</a></li> -->
             <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
           </ul>                   
         </div><!--/.nav-collapse -->        

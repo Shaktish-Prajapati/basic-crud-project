@@ -13,17 +13,20 @@ if(isset($_POST['submit']))
     $query="SELECT * from users where email='$email' and password= '$password'";
     $run_query=mysqli_query($conn,$query);
     $row = mysqli_fetch_array($run_query);
-    // $active = $row['users'];
+    $active_user = $row['name'];
     $count = mysqli_num_rows($run_query);
   //  echo $count;
+   
     if($count == 1) {
 
      $_SESSION['email'] = $email;
+     $_SESSION['name']=$active_user;
+    //  echo"<script>alert('Logged in...') </script>";
        header("location: index.php");
    }
    else{
     echo"<script>alert('check your credentials') </script>";
-  
+    // form.php?name1=value1
        
    }
     
@@ -72,7 +75,7 @@ $content='<!-- Page breadcrumb -->
                    </p>    
                               
                    <p class="form-submit">
-                     <input class="btn btn-classic" type="submit" value="Submit" class="mu-post-btn" name="submit">
+                     <input class="btn btn-danger" type="submit" value="Submit" class="mu-post-btn" name="submit">
                    </p>        
                  </form>
                </div>

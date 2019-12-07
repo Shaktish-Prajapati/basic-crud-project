@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title="";
 $content='<!-- Start Slider -->
 <section id="mu-slider">
