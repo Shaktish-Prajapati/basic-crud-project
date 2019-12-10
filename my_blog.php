@@ -1,16 +1,20 @@
 <?php 
-session_start();
-$title='Contents';
 
-$content='<!-- Page breadcrumb -->
+
+$title='Update messages';
+$content='';
+
+require('master.php');
+?>
+
+'<!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="mu-page-breadcrumb-area">
-          <h2>Content</h2>
+          <h2>Update Posts</h2>
           <ol class="breadcrumb">
-                      
            <h3><li class="active"><b>Posts</b></li></h3>
          </ol>
         </div>
@@ -27,9 +31,6 @@ $content='<!-- Page breadcrumb -->
       <div class="col-md-12">
         <div class="mu-contact-area">
          <!-- start title -->
-         <div class="mu-title">
-           <p><strong>Keep your messages healthy!</strong></p>
-         </div>
          <!-- end title -->
          <!-- start contact content -->
          <div class="mu-contact-content">           
@@ -37,11 +38,7 @@ $content='<!-- Page breadcrumb -->
              <div class="col-md-6">
                <div class="mu-contact-left">
                  <form action="upload.php" method="post" enctype="multipart/form-data" class="contactform">                  
-                   <!-- <p class="comment-form-author">
-                     <label for="author">Name <span class="required">*</span></label>
-                     <input type="text" required="required" size="30" placeholder="Author name" value="" name="author">
-                   </p> -->
-
+                   
                    <p class="comment-form-url">
                      <label for="topic">Topic Name<span class="required">*</span></label>
                      <input type="text" required="required" aria-required="true" name="topic">  
@@ -72,10 +69,6 @@ $content='<!-- Page breadcrumb -->
     </div>
   </div>
 </section>
-<!-- End contact  -->';
+<!-- End contact  -->;
 
 
-include('master.php')
-
-
-?>

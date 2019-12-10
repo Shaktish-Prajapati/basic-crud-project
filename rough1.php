@@ -151,9 +151,6 @@ $content=' <!-- Page breadcrumb -->
     </div>
   </div>
 </section> ';
-
-
-
 include('master.php');
 ?>
 

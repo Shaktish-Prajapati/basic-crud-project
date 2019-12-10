@@ -59,11 +59,11 @@
                 <div class="mu-header-top-left">
                   <div class="mu-top-email">
                     <i class="fa fa-envelope"></i>
-                    <span>info@techostrix.com</span>
+                    <span>info@gstcampus.com</span>
                   </div>
                   <div class="mu-top-phone">
                     <i class="fa fa-phone"></i>
-                    <span>(568) 986 652</span>
+                    <span>9624164671</span>
                   </div>
                 </div>
               </div>
@@ -122,6 +122,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php if(isset($_SESSION['name']))
               {
+                
                 echo $_SESSION['name'];
               }
             else{
@@ -131,6 +132,7 @@
               <ul class="dropdown-menu" role="menu">
               <?php if(isset($_SESSION['email']))
               {
+                echo '<li><a href="content.php">Write-Blogs</a></li> ';
                 echo '<li class=""><a href="logout.php">Logout</a></li> ';
               }
               else{
@@ -145,7 +147,7 @@
             </li>
              <!-- <li class=""><a href="register.php">Register</a></li>
              <li class=""><a href="login.php">Login</a></li> -->
-            <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li>
+            <!-- <li><a href="#" id="mu-search-icon"><i class="fa fa-search"></i></a></li> -->
           </ul>                   
         </div><!--/.nav-collapse -->        
       </div>     
@@ -211,7 +213,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
+            <!-- <div class="col-lg-3 col-md-3 col-sm-3">
               <div class="mu-footer-widget">
                 <h4>News letter</h4>
                 <p>Get latest update, news & academic offers</p>
@@ -220,15 +222,15 @@
                   <button class="mu-subscribe-btn" type="submit">Subscribe!</button>
                 </form>               
               </div>
-            </div>
+            </div> -->
             <div class="col-lg-3 col-md-3 col-sm-3">
               <div class="mu-footer-widget">
                 <h4>Contact</h4>
                 <address>
-                  <p>P.O. Box 320, Ross, California 9495, USA</p>
-                  <p>Phone: (415) 453-1568 </p>
-                  <p>Website: www.markups.io</p>
-                  <p>Email: info@markups.io</p>
+                  <p>Kharghar, Navi Mumbai, Maharastra India</p>
+                  <p>Phone: 9624164671 </p>
+                  <p>Website: www.gstcampus.com</p>
+                  <p>Email: support@gstcampus.com</p>
                 </address>
               </div>
             </div>
@@ -241,7 +243,7 @@
     <div class="mu-footer-bottom">
       <div class="container">
         <div class="mu-footer-bottom-area">
-          <p>&copy; All Right Reserved. Designed by <a href="http://www.markups.io/" rel="nofollow">MarkUps.io</a></p>
+          <p>&copy; All Right Reserved. Developed by <a href="#" rel="nofollow"><b>Techostrix Systems</b></a></p>
         </div>
       </div>
     </div>

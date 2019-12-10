@@ -1,9 +1,8 @@
-<?php
+<?php 
 session_start();
-
 require('db-conn.php');
-
-$query = "SELECT * FROM posts ";
+$emaill=$_SESSION['email'];
+$query = "SELECT * FROM posts WHERE user_post='$emaill'";
 
 if ($run_query = mysqli_query($conn, $query)) {
   // Fetch one and one row
@@ -54,7 +53,7 @@ else{
 }
 
 
-$title='blog-archive|collection of Blogs';
+$title='My BLOGS archive!';
 $content=' <!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb">
   <div class="container">
@@ -150,10 +149,7 @@ $content=' <!-- Page breadcrumb -->
       </div>
     </div>
   </div>
-</section> ';
-
-
+</section>';
 
 include('master.php');
 ?>
-

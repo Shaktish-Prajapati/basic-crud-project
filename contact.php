@@ -9,10 +9,7 @@ $content='<!-- Page breadcrumb -->
       <div class="col-md-12">
         <div class="mu-page-breadcrumb-area">
           <h2>Contact</h2>
-          <ol class="breadcrumb">
-           <li><a href="index.php">Home</a></li>            
-           <li class="active">Contact</li>
-         </ol>
+          
         </div>
       </div>
     </div>
@@ -29,8 +26,7 @@ $content='<!-- Page breadcrumb -->
          <!-- start title -->
          <div class="mu-title">
            <h2>Get in Touch</h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ut laboriosam corporis doloribus, officia, accusamus illo nam tempore totam alias!</p>
-         </div>
+          </div>
          <!-- end title -->
          <!-- start contact content -->
          <div class="mu-contact-content">           
