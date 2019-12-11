@@ -126,3 +126,7 @@ $content=' <!-- Page breadcrumb -->
 
 style="width:750px;height:500px;
 <!-- bootstrap include code -->
+
+
+
+<!-- <textarea type="text" id=demo  required="required" aria-required="true" name="content"></textarea> -->

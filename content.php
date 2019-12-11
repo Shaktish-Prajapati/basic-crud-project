@@ -1,5 +1,11 @@
 <?php 
 session_start();
+if(isset($_SESSION['email']))
+{}
+else{
+  echo"<script>alert('Login First...') </script>";// confirm
+    echo "<script>window.location = 'login.php'</script>";
+}
 $title='Contents';
 
 $content='<!-- Page breadcrumb -->
@@ -48,12 +54,18 @@ $content='<!-- Page breadcrumb -->
                    </p>
                    <p class="comment-form-url">
                      <label for="description">Description of Topic<span class="required">*</span></label>
-                     <input type="text" required="required" aria-required="true" placeholder="" name="description" maxlength="100">  
+                     <input type="text" required="required" aria-required="true" placeholder="" name="description" maxlength="150">  
                    </p>
-                   <p class="message">
+                   <p class="summernote">
                      <label for="content">Content</label>
-                     <textarea type="text" required="required" aria-required="true" name="content"></textarea>
-                   </p> 
+                     <!-- <textarea type="text" id=demo  required="required" aria-required="true" name="content"></textarea> -->
+                      <textarea id="summernote" name="content"> subham </textarea>  </p>
+                    <script>
+                    $(document).ready(function() {
+                        $(\'#summernote\').summernote();
+                    });
+                  </script>
+                    
                    <p class="form-submit">
                      <label for="image">Photo for Content</label>
                      <input type="file" name="image" id="imageToUpload">
@@ -73,6 +85,8 @@ $content='<!-- Page breadcrumb -->
   </div>
 </section>
 <!-- End contact  -->';
+
+
 
 
 include('master.php')

@@ -3,7 +3,7 @@ session_start();
 
 require('db-conn.php');
 
-$query = "SELECT * FROM posts ";
+$query = "SELECT * FROM posts ORDER BY id DESC";
 
 if ($run_query = mysqli_query($conn, $query)) {
   // Fetch one and one row

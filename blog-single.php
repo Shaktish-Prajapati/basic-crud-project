@@ -4,7 +4,6 @@ $get_content='';
 if(isset($_GET['id']))
 {
     $id=$_GET['id'];
-    echo $id;
     require('db-conn.php');
     $query="SELECT * FROM posts WHERE id=".$id;
     $run_query=mysqli_query($conn,$query);
