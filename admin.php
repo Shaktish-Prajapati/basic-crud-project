@@ -1,0 +1,10 @@
+<?php 
+
+
+
+
+$title='Admin';
+$content='';
+
+
+?>

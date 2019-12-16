@@ -15,8 +15,7 @@ $content='<!-- Page breadcrumb -->
       <div class="col-md-12">
         <div class="mu-page-breadcrumb-area">
           <h2>Content</h2>
-          <ol class="breadcrumb">
-                      
+          <ol class="breadcrumb">  
            <h3><li class="active"><b>Posts</b></li></h3>
          </ol>
         </div>
@@ -34,7 +33,7 @@ $content='<!-- Page breadcrumb -->
         <div class="mu-contact-area">
          <!-- start title -->
          <div class="mu-title">
-           <p><strong>Keep your messages healthy!</strong></p>
+           <p><strong>Keep your content healthy!</strong></p>
          </div>
          <!-- end title -->
          <!-- start contact content -->
@@ -59,7 +58,7 @@ $content='<!-- Page breadcrumb -->
                    <p class="summernote">
                      <label for="content">Content</label>
                      <!-- <textarea type="text" id=demo  required="required" aria-required="true" name="content"></textarea> -->
-                      <textarea id="summernote" name="content"> subham </textarea>  </p>
+                      <textarea id="summernote" name="content"></textarea>  </p>
                     <script>
                     $(document).ready(function() {
                         $(\'#summernote\').summernote();

@@ -1,5 +1,5 @@
 <?php
-// start_session();
+session_start();
 $get_content='';
 if(isset($_GET['id']))
 {
@@ -10,6 +10,11 @@ if(isset($_GET['id']))
     
     if($run_query)
     {
+      // if(mysqli_row($run_query)==0)
+      // {
+      //   echo"<script>alert('No data available...') </script>";// confirm
+      //   echo "<script>window.location = 'blog-archive.php'</script>";
+      // }
         while ($data = mysqli_fetch_array($run_query)){
         
         $get_id=$data['id'];
@@ -69,8 +74,10 @@ if(isset($_GET['id']))
     else{
         header('Location:blog-archive.php');
     }
-
-
+}
+else {
+  echo"<script>alert('No data avilable') </script>";// confirm
+  echo "<script>window.location = 'blog-archive.php'</script>";
 }
 $title='Read-blog';
 $content='<!-- Page breadcrumb -->

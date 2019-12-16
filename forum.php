@@ -1,92 +1,50 @@
-<?php
+<?php 
 session_start();
-$get_content='';
-if(isset($_GET['id']))
+if(isset($_SESSION['email']))
 {
-    $id=$_GET['id'];
+    // $name=$_SESSION['name'];
     require('db-conn.php');
-    $query="SELECT * FROM posts WHERE id=".$id;
+    $query="SELECT * FROM discuss_forum";
     $run_query=mysqli_query($conn,$query);
-    
-    if($run_query)
+    $row=mysqli_num_rows($run_query);
+    $data='';
+    while ($row = mysqli_fetch_array($run_query))
     {
-      if(mysqli_num_rows($run_query)==0)
-      {
-        echo"<script>alert('No data available...') </script>";// confirm
-        echo "<script>window.location = 'blog-archive.php'</script>";
-      }
-        while ($data = mysqli_fetch_array($run_query)){
-        
-        $get_id=$data['id'];
-        $get_user_post=$data['user_post'];
-        $get_author=$data['author'];
-        $get_topic_name= $data['topic_name'];
-        $get_description=$data['description'];
-        $get_content=$data['content'];
-        $get_date_time=$data['date_time'];
-        $get_image_src=$data['image_src'];
+        $id=$row['id'];
+        $name=$row['name'];
+        $question=$row['question'];
+        $posted_on=$row['posted_on'];
+        $category=$row['category'];
+        $status=$row['reply_status'];
 
-        $get_content='<div class="col-md-12">
-        <article class="mu-blog-single-item">
-          <figure class="mu-blog-single-img">
-            <a href="#"><img alt="img" src="'.$get_image_src.'"></a>
-            <figcaption class="mu-blog-caption">
-              <h3><a href="#">'.$get_topic_name.'</a></h3>
-            </figcaption>                      
-          </figure>
-          <div class="mu-blog-meta">
-            <a href="#">'.$get_author.'</a>
-            <a href="#">'.$get_date_time.'</a>
-            <span><i class="fa fa-comments-o"></i>87</span>
-          </div>
-          <div class="mu-blog-description">
-            <p>'.$get_description.' </p><br>
-            <p>'.$get_content.' </p>
-            
-            
-          </div>
-          <!-- start blog post tags -->
-          <div class="mu-blog-tags">
-            <ul class="mu-news-single-tagnav">
-              <li>TAGS :</li>
-              <li><a href="#">Science,</a></li>
-              <li><a href="#">English,</a></li>
-              <li><a href="#">Sports,</a></li>
-              <li><a href="#">Health</a></li>
-            </ul>
-          </div>
-          <!-- End blog post tags -->
-          <!-- start blog social share -->
-          <div class="mu-blog-social">
-            <ul class="mu-news-social-nav">
-              <li>SOCIAL SHARE :</li>
-              <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-              <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-              <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-            </ul>
-          </div>
-          <!-- End blog social share -->
-        </article>
-      </div>    ';
-        }
+        $data=$data.'<tr>
+                    <td>"'.$question.'"</td>
+                    <td>"'.$name.'"</br>"'.$posted_on.'"</td>
+                    <td>"'.$status.'"</td>
+                    <td><div class="mu-blog-description">
+                            <a class="btn btn-success" href=blog-single.php?id='.$id.'>See-Responses</a>
+                            </div>
+                        </td>
+                        <td><div class="mu-blog-description">
+                            <a class="btn btn-danger" href=blog-single.php?id='.$id.'>Reply</a>
+                            </div>
+                        </td>
+                    </tr>';
+
     }
-    else{
-        header('Location:blog-archive.php');
-    }
+
 }
-else {
-  echo"<script>alert('No data avilable') </script>";// confirm
-  echo "<script>window.location = 'blog-archive.php'</script>";
-}
-$title='My Single Blog';
+
+
+
+$title='';
 $content='<!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb">
    <div class="container">
      <div class="row">
        <div class="col-md-12">
          <div class="mu-page-breadcrumb-area">
-           <h2>My Complete Blog</h2>
+           <h2>Discussion Forum</h2>
          </div>
        </div>
      </div>
@@ -103,11 +61,51 @@ $content='<!-- Page breadcrumb -->
                 <!-- start course content container -->
                 <div class="mu-course-container mu-blog-single">
                   <div class="row">
-                        '.$get_content.'
+                  <style>
+                    table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    }
+
+                    td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                    }
+
+                    tr:nth-child(even) {
+                    background-color: #dddddd;
+                    }
+                    </style>
+                    <table class="danger">
+                    <!-- Table headings -->
+                    <tr  class="alert alert-dark">
+                        <th>Question</th>
+                        <th>Asked By</th>
+                        <th>Responses</th>
+                        <th>Reply</th> 
+                        
+                    </tr>
+                    <!-- Table Data Field -->
+                    <tr>
+                        <td>Alfreds Futterkistek</td>
+                        <td>Maria Anders </br> 10-06-19</td>
+                        <td><div class="mu-blog-description">
+                            <a class="btn btn-success" href=blog-single.php?id="'.$id.'">See-Responses</a>
+                            </div>
+                        </td>
+                        <td><div class="mu-blog-description">
+                            <a class="btn btn-danger" href=blog-single.php?id="'.$id.'">Reply</a>
+                            </div>
+                        </td>
+                    </tr>'
+                    .$data.
+                    '</table>
+
                   </div>
                 </div>
                 <!-- end course content container -->
-
                 <!-- start blog navigation -->
                 <div class="row">
                   <div class="col-md-12">
@@ -118,7 +116,7 @@ $content='<!-- Page breadcrumb -->
                   </div>
                 </div>
                 <!-- end blog navigation -->
-
+                
                 <!-- start blog comment -->
                 <div class="row">
                   <div class="col-md-12">
@@ -222,7 +220,42 @@ $content='<!-- Page breadcrumb -->
                   </div>
                 </div>
                 <!-- end blog comment -->
-               
+                <!-- start respond form -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="respond">
+                      <h3 class="reply-title">Leave a Comment</h3>
+                      <form id="commentform">
+                        <p class="comment-notes">
+                          Your email address will not be published. Required fields are marked <span class="required">*</span>
+                        </p>
+                        <p class="comment-form-author">
+                          <label for="author">Name <span class="required">*</span></label>
+                          <input type="text" required="required" size="30" value="" name="author">
+                        </p>
+                        <p class="comment-form-email">
+                          <label for="email">Email <span class="required">*</span></label>
+                          <input type="email" required="required" aria-required="true" value="" name="email">
+                        </p>
+                        <p class="comment-form-url">
+                          <label for="url">Website</label>
+                          <input type="url" value="" name="url">
+                        </p>
+                        <p class="comment-form-comment">
+                          <label for="comment">Comment</label>
+                          <textarea required="required" aria-required="true" rows="8" cols="45" name="comment"></textarea>
+                        </p>
+                        <p class="form-allowed-tags">
+                          You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </code>
+                        </p>
+                        <p class="form-submit">
+                          <input type="submit" value="Post Comment" class="mu-post-btn" name="submit">
+                        </p>        
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- end respond form -->
               </div>
               <div class="col-md-3">
                 <!-- start sidebar -->
@@ -240,7 +273,6 @@ $content='<!-- Page breadcrumb -->
                     </ul>
                   </div>
                   <!-- end single sidebar -->
-                  
                 </aside>
                 <!-- / end sidebar -->
              </div>
@@ -251,8 +283,7 @@ $content='<!-- Page breadcrumb -->
    </div>
  </section>';
 
-require('master.php');
-
+include('master.php')
 ?>
 
 

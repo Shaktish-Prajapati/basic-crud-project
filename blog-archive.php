@@ -38,7 +38,6 @@ if ($run_query = mysqli_query($conn, $query)) {
          <div class="mu-blog-description">
            <p>'.$description.'</p>
            <a class="btn btn-default" href=blog-single.php?id='.$id.'>Read More</a>
-           
          </div>
        </article> 
      </div> ';
@@ -62,9 +61,7 @@ $content=' <!-- Page breadcrumb -->
       <div class="col-md-12">
         <div class="mu-page-breadcrumb-area">
           <h2>Blog Archive</h2>
-          <ol class="breadcrumb">           
-          <!--  <li class="active">Blog Archive</li> -->
-         </ol>
+          
         </div>
       </div>
     </div>

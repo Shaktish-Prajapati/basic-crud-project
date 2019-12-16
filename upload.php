@@ -42,8 +42,7 @@ if(isset($_POST['submit']))
                         
                     }   
                 }
-                else{
-                                  }
+                else{}
 
              // to access the name of file $_FILES["image"]["name"];
     $image='postimages/'.$_FILES["image"]["name"];;
@@ -55,7 +54,7 @@ if(isset($_POST['submit']))
         echo"<script>alert('Uploading of Content Done...') </script>";
         echo mysqli_error($conn);  
         mysqli_close($conn);
-        // echo "<script>window.location = 'index.php'</script>";
+        echo "<script>window.location = 'index.php'</script>";
     }
     else{
         echo"<script>alert('Uploading of Content Failed...') </script>";

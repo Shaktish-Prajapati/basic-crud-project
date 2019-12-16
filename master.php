@@ -32,6 +32,7 @@
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet' type='text/css'>
+   
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
 
@@ -115,17 +116,19 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
             <li><a href="index.php">Home</a></li>            
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog<span class="fa fa-angle-down"></span></a>
-              <ul class="dropdown-menu" role="menu">
+            <li class="">
+            <li class=""><a href="blog-archive.php">Blogs</a></li> 
+              <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog<span class="fa fa-angle-down"></span></a> -->
+              <!-- <ul class="dropdown-menu" role="menu">
                 <li><a href="blog-archive.php">Blog Archive</a></li>                
                 <li><a href="blog-single.php">Blog Single</a></li>                
-              </ul>
+              </ul> -->
             </li>
-            
-             
+            <li class=""><a href="#">Consultancy</a></li>
+            <li class=""><a href="#">Forum</a></li>
 
             <li class=""><a href="contact.php">Contact</a></li>
+            
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php if(isset($_SESSION['name']))
               {
@@ -140,6 +143,8 @@
               <?php if(isset($_SESSION['email']))
               {
                 echo '<li><a href="content.php">Write-Blogs</a></li> ';
+                echo '<li><a href="my_blogs.php">My Blogs</a></li> ';
+                echo '<li><a href="#">Ask Questions</a></li> ';                
                 echo '<li class=""><a href="logout.php">Logout</a></li> ';
               }
               else{
