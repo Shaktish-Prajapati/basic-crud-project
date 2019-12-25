@@ -18,26 +18,30 @@ if(isset($_SESSION['email']))
         $status=$row['reply_status'];
 
         $data=$data.'<tr>
-                    <td>"'.$question.'"</td>
-                    <td>"'.$name.'"</br>"'.$posted_on.'"</td>
-                    <td>"'.$status.'"</td>
+                    <td>'.$question.'</td>
+                    <td>'.$name.'</br>'.$posted_on.'</td>
+                    
                     <td><div class="mu-blog-description">
-                            <a class="btn btn-success" href=blog-single.php?id='.$id.'>See-Responses</a>
+                            <a class="btn btn-success" href=blog-single.php?id='.$id.'>See-Reply</a>
                             </div>
                         </td>
                         <td><div class="mu-blog-description">
-                            <a class="btn btn-danger" href=blog-single.php?id='.$id.'>Reply</a>
+                            <a class="btn btn-primary" href=blog-single.php?id='.$id.'>Reply</a>
                             </div>
                         </td>
                     </tr>';
 
     }
+    mysqli_close($conn);
+}
+else{
+  echo"<script>alert('You need to Login First...') </script>";
+  
+  echo "<script>window.location = 'login.php'</script>";
 
 }
 
-
-
-$title='';
+$title='Discussion Forum';
 $content='<!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb">
    <div class="container">
@@ -81,22 +85,22 @@ $content='<!-- Page breadcrumb -->
                     <table class="danger">
                     <!-- Table headings -->
                     <tr  class="alert alert-dark">
-                        <th>Question</th>
-                        <th>Asked By</th>
-                        <th>Responses</th>
-                        <th>Reply</th> 
+                        <th width="600px" wrap="hard" >Questions</th>
+                        <th width="100px">Asked By & Date</th>
+                        <th width="50px">Responses</th>
+                        <th width="50px">Reply</th> 
                         
                     </tr>
                     <!-- Table Data Field -->
                     <tr>
-                        <td>Alfreds Futterkistek</td>
+                        <td>this is an question field </td>
                         <td>Maria Anders </br> 10-06-19</td>
                         <td><div class="mu-blog-description">
-                            <a class="btn btn-success" href=blog-single.php?id="'.$id.'">See-Responses</a>
+                            <a class="btn btn-success" href=blog-single.php?id="">See-Reply</a>
                             </div>
                         </td>
                         <td><div class="mu-blog-description">
-                            <a class="btn btn-danger" href=blog-single.php?id="'.$id.'">Reply</a>
+                            <a class="btn btn-primary" href=blog-single.php?id="">Reply</a>
                             </div>
                         </td>
                     </tr>'
@@ -117,139 +121,51 @@ $content='<!-- Page breadcrumb -->
                 </div>
                 <!-- end blog navigation -->
                 
-                <!-- start blog comment -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="mu-comments-area">
-                      <h3>5 Comments</h3>
-                      <div class="comments">
-                        <ul class="commentlist">
-                          <li>
-                            <div class="media">
-                              <div class="media-left">    
-                                <img alt="img" src="assets/img/testimonial-1.png" class="media-object news-img">
-                              </div>
-                              <div class="media-body">
-                               <h4 class="author-name">David Muller</h4>
-                               <span class="comments-date"> Posted on 12th June, 2016</span>
-                               <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "-------Content here, content here", making it look like readable English</p>
-                               <a class="reply-btn" href="#">Reply <span class="fa fa-long-arrow-right"></span></a>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="media">
-                              <div class="media-left">    
-                                <img alt="img" src="assets/img/testimonial-2.png" class="media-object news-img">
-                              </div>
-                              <div class="media-body">
-                               <h4 class="author-name">John Doe</h4>
-                               <span class="comments-date"> Posted on 12th June, 2016</span>
-                               <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "------------Content here, content here", making it look like readable English</p>
-                               <a class="reply-btn" href="#">Reply <span class="fa fa-long-arrow-right"></span></a>
-                              </div>
-                            </div>
-                          </li>
-                          <ul class="children">
-                            <li class="author-comments">
-                              <div class="media">
-                                <div class="media-left">    
-                                  <img alt="img" src="assets/img/testimonial-3.png" class="media-object news-img">
-                                </div>
-                                <div class="media-body">
-                                 <h4 class="author-name">Admin</h4>
-                                 <span class="comments-date"> Posted on 12th June, 2016</span>
-                                 <span class="author-tag">Author</span>
-                                 <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "-------Content here, content here", making it look like readable English</p>
-                                 <a class="reply-btn" href="#">Reply <span class="fa fa-long-arrow-right"></span></a>
-                                </div>
-                              </div>
-                            </li>
-                            <ul class="children">
-                              <li>
-                                <div class="media">
-                                  <div class="media-left">    
-                                    <img alt="img" src="assets/img/testimonial-1.png" class="media-object news-img">
-                                  </div>
-                                  <div class="media-body">
-                                   <h4 class="author-name">David Muller</h4>
-                                   <span class="comments-date"> Posted on 12th June, 2016</span>
-                                   <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "--------------Content here, content here", making it look like readable English</p>
-                                   <a class="reply-btn" href="#">Reply <span class="fa fa-long-arrow-right"></span></a>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </ul>
-                          <li>
-                            <div class="media">
-                              <div class="media-left">    
-                                <img alt="img" src="assets/img/testimonial-2.png" class="media-object news-img">
-                              </div>
-                              <div class="media-body">
-                               <h4 class="author-name">Jhon Doe</h4>
-                               <span class="comments-date"> Posted on 12th June, 2016</span>
-                               <p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "----------Content here, content here", making it look like readable English</p>
-                               <a class="reply-btn" href="#">Reply <span class="fa fa-long-arrow-right"></span></a>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                        <!-- comments pagination -->
-                        <nav>
-                          <ul class="pagination comments-pagination">
-                            <li>
-                              <a aria-label="Previous" href="#">
-                                <span class="fa fa-long-arrow-left"></span>
-                              </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                              <a aria-label="Next" href="#">
-                                <span class="fa fa-long-arrow-right"></span>
-                              </a>
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end blog comment -->
                 <!-- start respond form -->
                 <div class="row">
                   <div class="col-md-12">
                     <div id="respond">
-                      <h3 class="reply-title">Leave a Comment</h3>
-                      <form id="commentform">
-                        <p class="comment-notes">
-                          Your email address will not be published. Required fields are marked <span class="required">*</span>
-                        </p>
-                        <p class="comment-form-author">
-                          <label for="author">Name <span class="required">*</span></label>
-                          <input type="text" required="required" size="30" value="" name="author">
-                        </p>
-                        <p class="comment-form-email">
-                          <label for="email">Email <span class="required">*</span></label>
-                          <input type="email" required="required" aria-required="true" value="" name="email">
-                        </p>
-                        <p class="comment-form-url">
-                          <label for="url">Website</label>
-                          <input type="url" value="" name="url">
-                        </p>
+                      <h3 class="reply-title">Post Your Questions<br></h3>
+
+                      
+                      <form action="upload_question.php" method="post" id="commentform" enctype="multipart/form-data" >
+                      
+      
+                      <select class="btn btn-success" id="que_category" name="que_category" required class="browser-default custom-select custom-select-lg mb-3" >
+                        <option value="">Your Question\'s Category</option>
+                        <option value="gst">GST</option>
+                        <option value="cgst">CGST</option>
+                        <option value="sgts">SGST</option>
+                        <option value="igst">IGST/UTGST</option>
+                        <option value="vat">VAT</option>
+                        <option value="other">Other</option>
+                        </select>
+
                         <p class="comment-form-comment">
-                          <label for="comment">Comment</label>
-                          <textarea required="required" aria-required="true" rows="8" cols="45" name="comment"></textarea>
-                        </p>
-                        <p class="form-allowed-tags">
-                          You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </code>
+                        <br>
+                          <textarea id="summernote" required name="forum_question" aria-required="true" rows="25" cols="45" name="question"></textarea> 
+                          <script>
+                          $(document).ready(function() {
+                              $(\'#summernote\').summernote({
+                                placeholder: "Hello! You can adjust editor height",
+                                toolbar: [
+                                  ["style", ["style"]],
+                                  ["font", ["bold", "underline", "clear"]],
+                                  ["fontname", ["fontname"]],
+                                  ["color", ["color"]],
+                                  ["para", ["ul", "ol", "paragraph"]],
+                                  ["table", ["table"]],
+                                  ["insert", ["link"]],
+                                  ["view", ["fullscreen"]],
+                                ],
+                                  tabsize: 2,
+                                  height: 200
+                              });
+                          });
+                        </script>
                         </p>
                         <p class="form-submit">
-                          <input type="submit" value="Post Comment" class="mu-post-btn" name="submit">
+                          <input type="submit" value="Submit Query" class="btn btn-primary" name="submit" >
                         </p>        
                       </form>
                     </div>

@@ -79,7 +79,6 @@ $content=' <!-- Page breadcrumb -->
                <div class="mu-course-container mu-blog-archive">
                  <div class="row">'.$t.
                  '<!-- Artical ends -->
-
                  </div>
                </div>
                <!-- end course content container -->

@@ -125,7 +125,7 @@
               </ul> -->
             </li>
             <li class=""><a href="#">Consultancy</a></li>
-            <li class=""><a href="#">Forum</a></li>
+            <li class=""><a href="forum.php">Forum</a></li>
 
             <li class=""><a href="contact.php">Contact</a></li>
             

@@ -61,7 +61,12 @@ $content='<!-- Page breadcrumb -->
                       <textarea id="summernote" name="content"></textarea>  </p>
                     <script>
                     $(document).ready(function() {
-                        $(\'#summernote\').summernote();
+                        $(\'#summernote\').summernote({
+                          placeholder: "Hello! You can adjust editor height",
+                            tabsize: 2,
+                            height: 400,
+                            width:1000
+                        });
                     });
                   </script>
                     
@@ -70,7 +75,7 @@ $content='<!-- Page breadcrumb -->
                      <input type="file" name="image" id="imageToUpload">
                    </p>                  
                    <p class="form-submit">
-                     <input type="submit" value="Upload data" class="mu-post-btn" name="submit">
+                     <input type="submit" value="Upload data" class="btn btn-primary" name="submit">
                    </p>        
                </div>
              </div>

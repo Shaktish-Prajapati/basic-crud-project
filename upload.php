@@ -52,7 +52,7 @@ if(isset($_POST['submit']))
     if(isset($run_query)){
 
         echo"<script>alert('Uploading of Content Done...') </script>";
-        echo mysqli_error($conn);  
+         
         mysqli_close($conn);
         echo "<script>window.location = 'index.php'</script>";
     }
