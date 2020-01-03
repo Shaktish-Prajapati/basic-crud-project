@@ -21,12 +21,9 @@ if(isset($_SESSION['email']))
                     <td>'.$question.'</td>
                     <td>'.$name.'</br>'.$posted_on.'</td>
                     
-                    <td><div class="mu-blog-description">
-                            <a class="btn btn-success" href=responses.php?id='.$id.'>See-Reply</a>
-                            </div>
-                        </td>
+                   
                         <td><div class="mu-blog-description">
-                            <a class="btn btn-primary" href=responses.php?id='.$id.'>Reply</a>
+                            <a class="btn btn-primary" href=blog-single.php?id='.$id.'>Reply</a>
                             </div>
                         </td>
                     </tr>';
@@ -41,14 +38,14 @@ else{
 
 }
 
-$title='Discussion Forum';
+$title='Responses';
 $content='<!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb">
    <div class="container">
      <div class="row">
        <div class="col-md-12">
          <div class="mu-page-breadcrumb-area">
-           <h2>Discussion Forum</h2>
+           <h2>Responses</h2>
          </div>
        </div>
      </div>
@@ -61,7 +58,7 @@ $content='<!-- Page breadcrumb -->
        <div class="col-md-12">
          <div class="mu-course-content-area">
             <div class="row">
-              <div class="col-md-9">
+              <div class="">
                 <!-- start course content container -->
                 <div class="mu-course-container mu-blog-single">
                   <div class="row">
@@ -86,19 +83,16 @@ $content='<!-- Page breadcrumb -->
                     <!-- Table headings -->
                     <tr  class="alert alert-dark">
                         <th width="600px" wrap="hard" >Questions</th>
-                        <th width="100px">Asked By & Date</th>
+                        <th width="100px">Replied By & Date</th>
                         <th width="50px">Responses</th>
-                        <th width="50px">Reply</th> 
+                        
                         
                     </tr>
                     <!-- Table Data Field -->
                     <tr>
                         <td>this is an question field </td>
                         <td>Maria Anders </br> 10-06-19</td>
-                        <td><div class="mu-blog-description">
-                            <a class="btn btn-success" href=blog-single.php?id="">See-Reply</a>
-                            </div>
-                        </td>
+                        
                         <td><div class="mu-blog-description">
                             <a class="btn btn-primary" href=blog-single.php?id="">Reply</a>
                             </div>
@@ -114,8 +108,8 @@ $content='<!-- Page breadcrumb -->
                 <div class="row">
                   <div class="col-md-12">
                     <div class="mu-blog-single-navigation">
-                      <a class="mu-blog-prev" href="#"><span class="fa fa-angle-left"></span>   Prev     </a>
-                      <a class="mu-blog-next"  href="#">  Next   <span class="fa fa-angle-right"></span></a>
+                      <a class="mu-blog-prev" href="#"><span class="fa fa-angle-left"></span>Prev</a>
+                      <a class="mu-blog-next"  href="#">Next<span class="fa fa-angle-right"></span></a>
                     </div>
                   </div>
                 </div>
@@ -175,21 +169,7 @@ $content='<!-- Page breadcrumb -->
               </div>
               <div class="col-md-3">
                 <!-- start sidebar -->
-                <aside class="mu-sidebar">
-                  <!-- start single sidebar -->
-                  <div class="mu-single-sidebar">
-                    <h3>Categories</h3>
-                    <ul class="mu-sidebar-catg">
-                      <li><a href="#">Web Design</a></li>
-                      <li><a href="">Web Development</a></li>
-                      <li><a href="">Math</a></li>
-                      <li><a href="">Physics</a></li>
-                      <li><a href="">Camestry</a></li>
-                      <li><a href="">English</a></li>
-                    </ul>
-                  </div>
-                  <!-- end single sidebar -->
-                </aside>
+                
                 <!-- / end sidebar -->
              </div>
            </div>

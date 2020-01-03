@@ -3,10 +3,17 @@ session_start();
 if(isset($_SESSION['email']))
 {
     // $name=$_SESSION['name'];
+    $content_per_page=1;
+    $starting_content_point=0;
+    $ending_content_point=
     require('db-conn.php');
-    $query="SELECT * FROM discuss_forum";
+    $query="SELECT * FROM discuss_forum LIMIT    ";
     $run_query=mysqli_query($conn,$query);
     $row=mysqli_num_rows($run_query);
+    $page_required=ceil($row/$content_per_page);
+
+  function Next()
+  {
     $data='';
     while ($row = mysqli_fetch_array($run_query))
     {
@@ -33,6 +40,7 @@ if(isset($_SESSION['email']))
 
     }
     mysqli_close($conn);
+    }
 }
 else{
   echo"<script>alert('You need to Login First...') </script>";
@@ -110,12 +118,14 @@ $content='<!-- Page breadcrumb -->
                   </div>
                 </div>
                 <!-- end course content container -->
+
+
                 <!-- start blog navigation -->
                 <div class="row">
                   <div class="col-md-12">
                     <div class="mu-blog-single-navigation">
                       <a class="mu-blog-prev" href="#"><span class="fa fa-angle-left"></span>   Prev     </a>
-                      <a class="mu-blog-next"  href="#">  Next   <span class="fa fa-angle-right"></span></a>
+                      <a class="mu-blog-next"  href="pagination.php">  Next   <span class="fa fa-angle-right"></span></a>
                     </div>
                   </div>
                 </div>

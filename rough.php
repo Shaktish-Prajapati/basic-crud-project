@@ -198,3 +198,35 @@ tr:nth-child(even) {
 
 </body>
 </html>
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+   // pagination
+   
+<?php
+session_start();
+$result_per_page=2;
+require('db-conn.php');
+$query="SELECT * FROM discuss_forum";
+$run_query=mysqli_query($conn,$query);
+$no_of_rows=mysqli_num_rows($run_query);
+
+$no_of_pages=ceil($no_of_rows/$result_per_page);
+
+if(!isset($_GET['page']))
+{
+    $page=1;
+}
+else {
+     $page = $_GET['page'];
+}
+
+$this_page_result=($page-1)*$result_per_page;
+// sql
+
+for($page=1;$page<=$no_of_pages;$page++)
+{
+    echo '<a href="pagination.php?page='.$page.' "> '.$page.'</a>';
+}
+
+?>
